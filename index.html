@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login & Registration</title>
+   
+</head>
+
+<body style="background-image: url(assets/images/3.jpg);">
+    <div class="language-switcher" id="languageSwitcher">EN</div>
+
+    <div class="wrapper" id="loginWrapper">
+
+        <div class="form-box">
+            <!----------- login form ----------->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <div class="sign">
+                        <span data-i18n="noAccount">Don't have an account?</span>
+                        <a data-i18n="signUp" href="#" onclick="register()">Sign Up</a>
+                    </div>
+                    <header data-i18n="login">Login</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" id="loginEmail" placeholder="Email"
+                        data-i18n-placeholder="email">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" id="loginPassword" placeholder="Password"
+                        data-i18n-placeholder="password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Sign In" data-i18n-value="signIn"
+                        onclick="handleLogin()">
+                </div>
+                <div class="error-message" id="loginError"></div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check" data-i18n="rememberMe">Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#" data-i18n="forgotPassword">Forgot password?</a></label>
+                    </div>
+                </div>
+            </div>
+            <!----------- registration form ------------>
+            <div class="register-container" id="register">
+                <div class="top">
+                    <div class="sign">
+                        <span data-i18n="haveAccount">Have an account? </span>
+                        <a data-i18n="login" href="#" onclick="login()">Login</a>
+                    </div>
+
+                    <header data-i18n="signUp">Sign Up</header>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="firstName" placeholder="Firstname"
+                            data-i18n-placeholder="firstName">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="lastName" placeholder="Lastname"
+                            data-i18n-placeholder="lastName">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" id="registerEmail" placeholder="Email"
+                        data-i18n-placeholder="email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" id="registerPassword" placeholder="Password"
+                        data-i18n-placeholder="password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register" data-i18n-value="register"
+                        onclick="handleRegister()">
+                </div>
+                <div class="error-message" id="registerError"></div>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="register-check">
+                        <label for="register-check" data-i18n="rememberMe">Remember Me</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="#" data-i18n="terms">Terms & conditions</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!------------ to do list --------------->
+    <div class="todo-container" id="todoContainer">
+        <div class="todo-header">
+            <h2 data-i18n="todoList">To-Do List</h2>
+            <button class="logout-btn" onclick="handleLogout()" data-i18n="logout">Logout</button>
+        </div>
+        <div class="add-task">
+            <input type="text" id="taskInput" placeholder="Add a new task" data-i18n-placeholder="addTask">
+            <button onclick="addTask()" data-i18n="add">Add</button>
+        </div>
+        <ul class="task-list" id="taskList"></ul>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
